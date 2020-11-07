@@ -3,48 +3,40 @@ extends layout
 block content
 
   #banner.jumbotron
-    .container
-      h1 Socket.IO Chess
+    .container.rtl
+      h1 קרב הענקים
       p.
-        A real-time multi-player chess app using
-        <a href="http://nodejs.org">Node.js</a>,
-        <a href="http://expressjs.com">Express</a>, and of course
-        <a href="http://socket.io">Socket.IO</a>.
-
-      p.
-        <a class="btn btn-primary" href="https://github.com/thebinarypenguin/socket.io-chess">
-        View project on GitHub
-        </a>
+        משחק השחמט של טל פורשר - אונליין
 
   .container
     .row
       .col-sm-6
-        h2 Start a New Game
+        h2 משחק חדש
         form#startForm(action="/start", method="POST", role="form")
           .form-group
-            label Play as
+            label בחר צבע שחקן
             div
               .btn-group(data-toggle="buttons")
-                label.btn.btn-default.active
+                label.btn.btn-default.active  
                   input(type="radio", name="player-color", value="white", checked="checked")
-                  | White
+                  | לבן
                 label.btn.btn-default
                   input(type="radio", name="player-color", value="black")
-                  | Black
+                  | שחור
           .form-group
-            label(for="playerName") Name
-            input#playerName.form-control(type="text", name="player-name", placeholder="Player 1")
-          button.btn.btn-primary(type="submit") Start Game
+            label(for="playerName") שם
+            input#playerName.form-control(type="text", name="player-name", placeholder="השם שלך")
+          button.btn.btn-primary(type="submit") התחל
       .col-sm-6
-        h2 Join an Existing Game
+        h2 להצטרפות למשחק שמישהו כבר יצר
         form#joinForm(action="/join", method="POST", role="form")
           .form-group
-            label(for="gameID") Game ID
+            label(for="gameID") מספר משחק
             input#gameID.form-control(type="text", name="game-id")
           .form-group
-            label(for="playerName") Name
-            input#playerName.form-control(type="text", name="player-name", placeholder="Player 2")
-          button.btn.btn-primary(type="submit") Join Game
+            label(for="playerName") שם
+            input#playerName.form-control(type="text", name="player-name", placeholder="השם שלך")
+          button.btn.btn-primary(type="submit") הצטרפות
 
   script(src="/js/jquery.min.js")
   script(src="/js/bootstrap.min.js")

@@ -123,3 +123,7 @@ table { border-collapse: collapse; }
 .white.bishop:before  { content: "\2657"; }
 .white.queen:before   { content: "\2655"; }
 .white.king:before    { content: "\2654"; }
+
+.rtl{
+  direction: rtl;
+}
