@@ -1,6 +1,5 @@
 body {
   background-color: #f8f8f8;
-  width: fit-content;
 }
 
 table {
@@ -11,10 +10,12 @@ table {
   background-color: #222222;
   color: #ffffff;
   font-size: xx-large;
-  background-image: url(/img/gif.gif);
+  background-image: url(/img/knives.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 275px;
+  min-height: 63vw;
 }
 
 #startForm,

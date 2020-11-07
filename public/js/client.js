@@ -237,6 +237,7 @@ var Client = (function(window) {
 
     // Update UI with new game state
     socket.on('update', function(data) {
+      window.navigator.vibrate(200);
       console.log(data);
       gameState = data;
       update();
