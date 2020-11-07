@@ -1,7 +1,13 @@
 body  { background-color: #f8f8f8; }
 table { border-collapse: collapse; }
 
-#banner { background-color: #222222; color: #ffffff; }
+background-color: #222222;
+    color: #ffffff;
+    font-size: xx-large;
+    background-image: url(/img/gif.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
 #startForm, #joinForm { padding: 15px; }
 
