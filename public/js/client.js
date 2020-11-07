@@ -278,7 +278,7 @@ var Client = (function (window) {
     // Update UI with new game state
     socket.on('update', function (data) {
       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-      if (navigator.vibrate) {
+      if (navigator.vibrate && data.lastMove != null) {
         window.navigator.vibrate(100,40,100,40,400);
       }
       console.log(data);
