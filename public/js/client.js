@@ -279,7 +279,7 @@ var Client = (function (window) {
     socket.on('update', function (data) {
       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
       if (navigator.vibrate && data.lastMove != null) {
-        window.navigator.vibrate(100,40,100,40,400);
+        window.navigator.vibrate([80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,320,160,320,160,320]);
       }
       console.log(data);
       gameState = data;
