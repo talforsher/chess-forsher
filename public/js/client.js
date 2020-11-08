@@ -279,7 +279,10 @@ var Client = (function (window) {
     socket.on('update', function (data) {
       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
       if (navigator.vibrate && data.lastMove != null) {
-        window.navigator.vibrate([80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,320,160,320,160,320]);
+        if (data.lastMove == "capture")
+          window.navigator.vibrate([80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,320,160,320]);
+        if (data.lastMove == "move")
+          window.navigator.vibrate([100,50,100,50,100]);  
       }
       console.log(data);
       gameState = data;
@@ -582,9 +585,11 @@ var Client = (function (window) {
     switch (type) {
       case 'checkmate-win':
         header.addClass('alert-success').text('Checkmate');
+        window.navigator.vibrate([60,30,60,30,60,30,800,100,800,100,800]);
         break;
       case 'checkmate-lose':
         header.addClass('alert-danger').text('Checkmate');
+        window.navigator.vibrate([60,30,60,30,60,30,800,100,800,100,800]);
         break;
       case 'forfeit-win':
         header.addClass('alert-success').text('Your opponent has forfeited the game');
